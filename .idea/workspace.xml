@@ -2,28 +2,99 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b454bc1a-197f-4c9d-8ec5-ead58b348745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/BooksApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/application/BookCatalog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/domain/enums/BookStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/domain/enums/Genre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/domain/model/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/domain/model/BookId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/java/velin/finki/emt/exchangebook/books/domain/repository/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/src/test/java/velin/finki/emt/exchangebook/books/BooksApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/datepickerConnector.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/datepickerConnector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/gridConnector.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/gridConnector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/vaadin-big-decimal-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/flow-frontend/vaadin-big-decimal-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/src/vaadin-app-layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/src/vaadin-app-layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/src/vaadin-drawer-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/src/vaadin-drawer-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/theme/lumo/vaadin-app-layout-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-app-layout/theme/lumo/vaadin-app-layout-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/src/vaadin-app-layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/src/vaadin-app-layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/src/vaadin-drawer-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/src/vaadin-drawer-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/lumo/vaadin-app-layout-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/lumo/vaadin-app-layout-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/material/vaadin-app-layout-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/material/vaadin-app-layout-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/material/vaadin-drawer-toggle-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-app-layout/theme/material/vaadin-drawer-toggle-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay-content.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay-content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-infinite-scroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-infinite-scroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-month-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/src/vaadin-month-calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/lumo/vaadin-date-picker-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/lumo/vaadin-date-picker-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/lumo/vaadin-date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/lumo/vaadin-date-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/material/vaadin-date-picker-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/material/vaadin-date-picker-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/material/vaadin-date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-date-picker/theme/material/vaadin-date-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-draggable-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-draggable-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-resizable-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-resizable-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/vaadin-list-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/vaadin-list-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/vaadin-multi-select-list-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-list-mixin/vaadin-multi-select-list-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-email-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-email-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-integer-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-integer-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-number-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-number-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-password-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-password-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-area.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-email-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-email-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-number-field-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-number-field-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-text-field-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/lumo/vaadin-text-field-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/material/vaadin-text-field-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/node_modules/@vaadin/vaadin-text-field/theme/material/vaadin-text-field-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/npm-shrinkwrap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay-content.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay-content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker-overlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-date-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-infinite-scroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-infinite-scroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-month-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-date-picker/src/vaadin-month-calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-draggable-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-draggable-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-resizable-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog-resizable-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-dialog/src/vaadin-dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-column-group.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-column-group.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-filter-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-filter-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-keyboard-navigation-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-keyboard-navigation-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-scroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-scroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-selection-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-selection-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-sort-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-sort-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-sorter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-sorter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-templatizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-templatizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-tree-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-tree-column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-tree-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid-tree-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-grid/src/vaadin-grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-email-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-email-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-integer-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-integer-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-number-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-number-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-password-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-password-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-area.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field-mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field-mixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-text-field/src/vaadin-text-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingAccepted.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingDone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +105,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +128,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.42647058" />
@@ -67,6 +139,7 @@
       <recent name="velin.finki.emt.exchangebook.userborrowings.domain.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\velin\Desktop\exchangebook\library\src\main\java\velin\finki\emt\exchangebook\library" />
       <recent name="C:\Users\velin\Desktop\exchangebook\core\src\main\java\velin\finki\emt\exchangebook\core\base" />
       <recent name="C:\Users\velin\Desktop\exchangebook\core\src\main\java\velin\finki\emt\exchangebook\core" />
     </key>
@@ -88,7 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BooksApplication (1)">
+  <component name="RunManager" selected="Spring Boot.LibraryApplication">
     <configuration name="BooksApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="booksmenagement" />
       <extension name="coverage">
@@ -144,12 +217,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbc7770c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f5d51c4c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbc7770c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@57c12a86" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f5d51c4c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5d09fc2c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -175,7 +248,7 @@
       <workItem from="1594131116556" duration="493000" />
       <workItem from="1594131642637" duration="202000" />
       <workItem from="1594131867347" duration="1192000" />
-      <workItem from="1594133116317" duration="700000" />
+      <workItem from="1594133116317" duration="9063000" />
     </task>
     <servers />
   </component>
@@ -194,5 +267,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/repository/UserRepository.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

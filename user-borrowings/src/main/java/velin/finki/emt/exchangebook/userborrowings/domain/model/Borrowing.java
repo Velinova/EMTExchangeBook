@@ -68,10 +68,9 @@ public class Borrowing extends AbstractEntity<BorrowingId> {
 
     }
 
-    public Borrowing(BorrowingId borrowingId, Duration exchangeDurration, MeetingAddress meetingAddress, UserId borrower, UserId lender, Date madeOnDate, String borrowerNote, BookId lendedBook) {
-        super(borrowingId);
+    public Borrowing(Duration exchangeDuration, MeetingAddress meetingAddress, UserId borrower, UserId lender, Date madeOnDate, String borrowerNote, BookId lendedBook) {
         this.borrowerNote = borrowerNote;
-        this.exchangeDuration = exchangeDurration;
+        this.exchangeDuration = exchangeDuration;
         this.address = meetingAddress;
         this.borrower = borrower;
         this.lender = lender;

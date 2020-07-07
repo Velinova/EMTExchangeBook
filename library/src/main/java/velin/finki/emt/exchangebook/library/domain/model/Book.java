@@ -1,9 +1,9 @@
 package velin.finki.emt.exchangebook.library.domain.model;
 
 import lombok.Getter;
-import velin.finki.emt.exchangebook.books.domain.enums.BookStatus;
-import velin.finki.emt.exchangebook.books.domain.enums.Genre;
 import velin.finki.emt.exchangebook.core.base.AbstractEntity;
+import velin.finki.emt.exchangebook.core.enums.BookStatus;
+import velin.finki.emt.exchangebook.core.enums.Genre;
 import velin.finki.emt.exchangebook.core.valueobjects.FullName;
 
 import javax.persistence.*;
