@@ -24,9 +24,9 @@ class BookCatalogClient implements BookCatalog {
     private final RestTemplate restTemplate;
     private final String serverUrl;
 
-    BookCatalogClient(@Value("${app.product-catalog.url}") String serverUrl,
-                      @Value("${app.product-catalog.connect-timeout-ms}") int connectTimeout,
-                      @Value("${app.product-catalog.read-timeout-ms}") int readTimeout
+    BookCatalogClient(@Value("${app.userborrowings.url}") String serverUrl,
+                      @Value("${app.userborrowings.connect-timeout-ms}") int connectTimeout,
+                      @Value("${app.userborrowings.read-timeout-ms}") int readTimeout
     ) {
         this.serverUrl = serverUrl;
         restTemplate = new RestTemplate();

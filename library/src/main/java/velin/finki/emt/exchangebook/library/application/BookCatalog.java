@@ -5,9 +5,12 @@ import lombok.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
+import velin.finki.emt.exchangebook.library.domain.enums.BookStatus;
 import velin.finki.emt.exchangebook.library.domain.model.Book;
 import velin.finki.emt.exchangebook.library.domain.model.BookId;
 import velin.finki.emt.exchangebook.library.domain.repository.BookRepository;
+import velin.finki.emt.exchangebook.library.integration.BorrowingAcceptedEvent;
+import velin.finki.emt.exchangebook.library.integration.BorrowingDoneEvent;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -34,12 +37,22 @@ public class BookCatalog {
         return bookRepository.findById(productId);
     }
 
+    //handling book accepted event, changing status to NOT_AVAILABLE
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
+    public void onBorrowingAcceptedEvent(BorrowingAcceptedEvent event) {
+        Book borrowedBook = bookRepository.findById(event.getBorrowedBookId()).orElseThrow(RuntimeException::new);
+        borrowedBook.changeStatus();
+        bookRepository.save(borrowedBook);
+        Book lentBook = bookRepository.findById(event.getLentBookId()).orElseThrow(RuntimeException::new);
+        lentBook.changeStatus();
+        bookRepository.save(lentBook);
+    }
 
-//    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
-//    public void onBorrowingCreatedEvent(BorrowingCreatedEvent event) {
-//        Book b = bookRepository.findById(event.getBookId()).orElseThrow(RuntimeException::new);
-//        b.changeStatus();
-//        bookRepository.save(b);
-//    }
-
+    //handling book done event, changing status to AVAILABLE
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
+    public void onBorrowingDoneEvent(BorrowingDoneEvent event) {
+        Book book = bookRepository.findById(event.getBookId()).orElseThrow(RuntimeException::new);
+        book.changeStatus();
+        bookRepository.save(book);
+    }
 }

@@ -9,8 +9,8 @@
         <module name="exchangebook" />
         <module name="user-borrowings" />
         <module name="booksmenagement" />
-        <module name="core" />
         <module name="library" />
+        <module name="core" />
         <module name="books" />
       </profile>
     </annotationProcessing>

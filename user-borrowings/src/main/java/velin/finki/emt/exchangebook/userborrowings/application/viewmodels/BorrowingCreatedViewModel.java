@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BorrowingViewModel implements Serializable {
+public class BorrowingCreatedViewModel implements Serializable {
 
     @NotNull
     private UserId borrower;
@@ -33,7 +33,6 @@ public class BorrowingViewModel implements Serializable {
 
     private String borrowerNote;
     private Date madeOnDate;
-    private Date doneOnDate;
 
     @Valid
     @NotNull

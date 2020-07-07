@@ -4,17 +4,24 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import velin.finki.emt.exchangebook.core.enums.BookStatus;
 import velin.finki.emt.exchangebook.core.valueobjects.MeetingAddress;
-import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingViewModel;
+import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingAcceptedViewModel;
+import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingCreatedViewModel;
 import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.MeetingAddressViewModel;
+import velin.finki.emt.exchangebook.userborrowings.domain.enums.BorrowingStatus;
+import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingAccepted;
+import velin.finki.emt.exchangebook.userborrowings.domain.model.Book;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.Borrowing;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.BorrowingId;
 import velin.finki.emt.exchangebook.userborrowings.domain.repository.BorrowingRepository;
 import velin.finki.emt.exchangebook.userborrowings.domain.repository.UserRepository;
 import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingCreated;
 
+import javax.management.InvalidAttributeValueException;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
+import java.time.Instant;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -43,18 +50,62 @@ public class UserBorrowingsCatalog {
         this.validator = validator;
         this.bookCatalog = bookCatalog;
     }
-// borrowing created apply changes after creating borrowingForm
-    public BorrowingId createBorrowing(@NonNull BorrowingViewModel borrowing) {
+
+
+    //borrowing created (not published event)
+    public BorrowingId createBorrowing(@NonNull BorrowingCreatedViewModel borrowing) throws InvalidAttributeValueException {
+        //check validator constraints
         Objects.requireNonNull(borrowing,"borrowing must not be null");
         var constraintViolations = validator.validate(borrowing);
-
         if (constraintViolations.size() > 0) {
             throw new ConstraintViolationException("The BorrowingForm is not valid", constraintViolations);
         }
+        //check if borrowed book is available
+        if(bookCatalog.findById(toDomainModel(borrowing).getBorrowedBook()).equals(BookStatus.NOT_AVAILABLE)){
+            throw new InvalidAttributeValueException("The borrowed book is not available for lending at this moment.");
+        }
 
+        //save object
         var newBorrowing = borrowingRepository.saveAndFlush(toDomainModel(borrowing));
-        applicationEventPublisher.publishEvent(new BorrowingCreated(newBorrowing.id(), newBorrowing.getMadeOnDate().toInstant(), newBorrowing.getBorrowedBook()));
         return newBorrowing.id();
+    }
+
+    //borrowing declined (not published event)
+    public BorrowingId declinedBorrowing(BorrowingId id) throws InvalidAttributeValueException {
+        Borrowing borrowingForUpdate = borrowingRepository.findById(id).get();
+        borrowingForUpdate.setStatus(BorrowingStatus.DECLINED_BY_USER);
+
+        //save object
+        var newBorrowing = borrowingRepository.saveAndFlush(borrowingForUpdate);
+        return newBorrowing.id();
+    }
+
+
+    //borrowing accepted (published event)
+    public BorrowingId acceptedBorrowing(@NonNull BorrowingAcceptedViewModel borrowing) throws InvalidAttributeValueException {
+        //check validator constraints
+        Objects.requireNonNull(borrowing,"borrowing must not be null");
+        var constraintViolations = validator.validate(borrowing);
+        if (constraintViolations.size() > 0) {
+            throw new ConstraintViolationException("The BorrowingForm is not valid", constraintViolations);
+        }
+        Borrowing domainModelBorrowing = toDomainModel(borrowing);
+
+        //check if lent book is available
+        if(bookCatalog.findById(domainModelBorrowing.getLentBook()).equals(BookStatus.NOT_AVAILABLE)){
+            throw new InvalidAttributeValueException("The lent book is not available for lending at this moment.");
+        }
+
+        //update attributes of the pending borrowing
+        Borrowing borrowingForUpdate = borrowingRepository.findById(toDomainModel(borrowing).getId()).get();
+        borrowingForUpdate.setLenderNote(domainModelBorrowing.getLenderNote());
+        borrowingForUpdate.setLentBook(domainModelBorrowing.getLentBook());
+        borrowingForUpdate.setStatus(BorrowingStatus.ACCEPTED);
+
+        //update object and publish event
+        var acceptedBorrowing = borrowingRepository.saveAndFlush(borrowingForUpdate);
+        applicationEventPublisher.publishEvent(new BorrowingAccepted(acceptedBorrowing.id(), Instant.now(), acceptedBorrowing.getBorrowedBook(), acceptedBorrowing.getLentBook()));
+        return acceptedBorrowing.id();
     }
 
     //for accessing borrowing by id
@@ -65,12 +116,17 @@ public class UserBorrowingsCatalog {
     }
 
     @NonNull
-    private Borrowing toDomainModel(@NonNull BorrowingViewModel borrowingViewModel) {
+    private Borrowing toDomainModel(@NonNull BorrowingCreatedViewModel borrowingViewModel) {
         var borrowing = new Borrowing(borrowingViewModel.getExchangeDuration(),
                 toDomainModel(borrowingViewModel.getMeetingAddress()), borrowingViewModel.getBorrower(), borrowingViewModel.getLender(), borrowingViewModel.getMadeOnDate(), borrowingViewModel.getBorrowerNote(), borrowingViewModel.getLentBook());
         return borrowing;
     }
 
+    @NonNull
+    private Borrowing toDomainModel(@NonNull BorrowingAcceptedViewModel borrowingViewModel) {
+        var borrowing = new Borrowing(borrowingViewModel.getBorrower(), borrowingViewModel.getLender(),borrowingViewModel.getBorrowedBook(), borrowingViewModel.getLentBook(), borrowingViewModel.getLenderNote());
+        return borrowing;
+    }
     @NonNull
     private MeetingAddress toDomainModel(@NonNull MeetingAddressViewModel viewModel) {
         return new MeetingAddress(viewModel.getAddress(), viewModel.getCity(),viewModel.getTime());

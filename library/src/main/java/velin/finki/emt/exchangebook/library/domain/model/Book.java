@@ -53,5 +53,10 @@ public class Book extends AbstractEntity<BookId> {
         this.author = author;
         this.status = status;
     }
-
+    public void changeStatus(){
+        if(this.status.equals(BookStatus.NOT_AVAILABLE) )
+            this.status = BookStatus.AVAILABLE;
+        else
+            this.status = BookStatus.NOT_AVAILABLE;
+    }
 }

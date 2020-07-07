@@ -78,7 +78,24 @@ public class Borrowing extends AbstractEntity<BorrowingId> {
         this.madeOnDate = madeOnDate;
         this.doneOnDate = calculateDoneOnDate(madeOnDate, exchangeDuration);
     }
+    public Borrowing(UserId borrower, UserId lender, BookId borrowedBook, BookId lentBook, String lenderNote){
+        this.borrower = borrower;
+        this.lender = lender;
+        this.borrowedBook = borrowedBook;
+        this.lentBook = lentBook;
+        this.lenderNote = lenderNote;
+    }
 
+    public void setLentBook(BookId lentBook) {
+        this.lentBook = lentBook;
+    }
+
+    public void setLenderNote(String lenderNote) {
+        this.lenderNote = lenderNote;
+    }
+    public void setStatus(BorrowingStatus status){
+        this.status = status;
+    }
 
     //method which calculates borrowing's duration from date that it's been made on
     private Date calculateDoneOnDate(Date madeOnDate, Duration exchangeDuration){
