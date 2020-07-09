@@ -34,7 +34,7 @@ public class BorrowingAcceptedEvent implements DomainEvent {
     }
 
     @NonNull
-    public BorrowingId getborrowingId() {
+    public BorrowingId getBorrowingId() {
         return borrowingId;
     }
     @NotNull

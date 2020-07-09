@@ -15,32 +15,42 @@ public class BorrowingDoneEvent implements DomainEvent {
 
     @JsonProperty("borrowing_id")
     private final BorrowingId borrowingId;
-    @JsonProperty("book_id")
-    private final BookId bookId;
+    @JsonProperty("borrowed_book_id")
+    private final BookId borrowedBookId;
+    @JsonProperty("lent_book_id")
+    private final BookId lentBookId;
     @JsonProperty("occurred_on")
     private final Instant occurredOn;
 
     @JsonCreator
     public BorrowingDoneEvent(@JsonProperty("borrowing_id") @NonNull BorrowingId borrowingId,
-                                  @JsonProperty("book_id") @NonNull BookId bookId
-            , @JsonProperty("occurredOn") @NonNull Instant occurredOn) {
+                              @JsonProperty("borrowed_book_id") @NonNull BookId borrowedBookId,
+                              @JsonProperty("lent_book_id") @NonNull BookId lentBookId,
+                              @JsonProperty("occurredOn") @NonNull Instant occurredOn) {
         this.borrowingId = Objects.requireNonNull(borrowingId, "borrowingId must not be null");
-        this.bookId = bookId;
+        this.borrowedBookId = borrowedBookId;
+        this.lentBookId = lentBookId;
         this.occurredOn = Objects.requireNonNull(occurredOn, "occurredOn must not be null");
     }
 
     @NonNull
-    public BorrowingId getborrowingId() {
+    public BorrowingId getBorrowingId() {
         return borrowingId;
     }
+
     @NotNull
-    public BookId getBookId(){
-        return bookId;
+    public BookId getBorrowedBookId() {
+        return borrowedBookId;
     }
+
+    @NotNull
+    public BookId getLentBookId() {
+        return lentBookId;
+    }
+
     @Override
     @NonNull
     public Instant occurredOn() {
         return occurredOn;
     }
 }
-

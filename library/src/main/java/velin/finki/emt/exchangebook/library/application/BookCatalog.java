@@ -37,6 +37,12 @@ public class BookCatalog {
         return bookRepository.findById(productId);
     }
 
+    @NonNull
+    public Optional<Book> findByUserId(@NonNull String userId) {
+        Objects.requireNonNull(userId, "userId must not be null");
+        return bookRepository.findByUserId(userId);
+    }
+
     //handling book accepted event, changing status to NOT_AVAILABLE
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void onBorrowingAcceptedEvent(BorrowingAcceptedEvent event) {
@@ -51,8 +57,11 @@ public class BookCatalog {
     //handling book done event, changing status to AVAILABLE
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void onBorrowingDoneEvent(BorrowingDoneEvent event) {
-        Book book = bookRepository.findById(event.getBookId()).orElseThrow(RuntimeException::new);
-        book.changeStatus();
-        bookRepository.save(book);
+        Book borrowedBook = bookRepository.findById(event.getBorrowedBookId()).orElseThrow(RuntimeException::new);
+        borrowedBook.changeStatus();
+        bookRepository.save(borrowedBook);
+        Book lentBook = bookRepository.findById(event.getLentBookId()).orElseThrow(RuntimeException::new);
+        lentBook.changeStatus();
+        bookRepository.save(lentBook);
     }
 }

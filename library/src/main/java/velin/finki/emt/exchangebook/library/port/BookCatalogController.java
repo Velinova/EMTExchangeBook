@@ -10,6 +10,8 @@ import velin.finki.emt.exchangebook.library.domain.model.Book;
 import velin.finki.emt.exchangebook.library.domain.model.BookId;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/books")
@@ -34,6 +36,11 @@ class BookCatalogController {
     @GetMapping
     public List<Book> findAll() {
         return bookCatalog.findAll();
+    }
+
+    @GetMapping("/all/{userId}")
+    public List<Book> findAllByUser(@PathVariable ("userId") String userId){
+        return bookCatalog.findByUserId(userId).stream().collect(Collectors.toList());
     }
 }
 

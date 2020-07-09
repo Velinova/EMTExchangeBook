@@ -19,7 +19,7 @@ class BorrowingAcceptedEventTranslator implements RemoteEventTranslator {
 
     @Override
     public boolean supports(StoredDomainEvent remoteEvent) {
-        return remoteEvent.domainEventClassName().equals("mk.ukim.finki.emt.productordering.productcatalog.integration.OrderCreatedEvent");
+        return remoteEvent.domainEventClassName().equals("velin.finki.emt.exchangebook.library.integration.BorrowingAcceptedEvent");
     }
 
     @Override

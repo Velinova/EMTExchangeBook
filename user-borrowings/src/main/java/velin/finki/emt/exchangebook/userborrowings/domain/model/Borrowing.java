@@ -96,6 +96,9 @@ public class Borrowing extends AbstractEntity<BorrowingId> {
     public void setStatus(BorrowingStatus status){
         this.status = status;
     }
+    public void setDoneOnDate(Date date){
+        this.doneOnDate = date;
+    }
 
     //method which calculates borrowing's duration from date that it's been made on
     private Date calculateDoneOnDate(Date madeOnDate, Duration exchangeDuration){

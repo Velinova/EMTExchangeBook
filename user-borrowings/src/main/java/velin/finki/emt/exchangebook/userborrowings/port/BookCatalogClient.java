@@ -12,9 +12,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 import velin.finki.emt.exchangebook.userborrowings.application.BookCatalog;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.Book;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.BookId;
+import velin.finki.emt.exchangebook.userborrowings.domain.model.UserId;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 class BookCatalogClient implements BookCatalog {
@@ -66,6 +68,20 @@ class BookCatalogClient implements BookCatalog {
                     }).getBody();
         } catch (Exception ex) {
             LOGGER.error("Error retrieving book by id", ex);
+            return null;
+        }
+    }
+
+
+    @Override
+    public List<Book> findByUserId(UserId id) {
+        try {
+            var list = restTemplate.exchange(uri().path("/api/books/all/"+id.getId()).build().toUri(), HttpMethod.GET, null,
+                    new ParameterizedTypeReference<List<Book>>() {
+                    }).getBody();
+            return list;
+        } catch (Exception ex) {
+            LOGGER.error("Error retrieving books by userId", ex);
             return null;
         }
     }

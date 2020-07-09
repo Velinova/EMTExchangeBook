@@ -8,9 +8,11 @@ import velin.finki.emt.exchangebook.core.enums.BookStatus;
 import velin.finki.emt.exchangebook.core.valueobjects.MeetingAddress;
 import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingAcceptedViewModel;
 import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingCreatedViewModel;
+import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingDoneViewModel;
 import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.MeetingAddressViewModel;
 import velin.finki.emt.exchangebook.userborrowings.domain.enums.BorrowingStatus;
 import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingAccepted;
+import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingDone;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.Book;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.Borrowing;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.BorrowingId;
@@ -52,7 +54,7 @@ public class UserBorrowingsCatalog {
     }
 
 
-    //borrowing created (not published event)
+    //BORROWING CREATED (not published event)
     public BorrowingId createBorrowing(@NonNull BorrowingCreatedViewModel borrowing) throws InvalidAttributeValueException {
         //check validator constraints
         Objects.requireNonNull(borrowing,"borrowing must not be null");
@@ -70,9 +72,9 @@ public class UserBorrowingsCatalog {
         return newBorrowing.id();
     }
 
-    //borrowing declined (not published event)
+    //BORROWING DECLINED (not published event)
     public BorrowingId declinedBorrowing(BorrowingId id) throws InvalidAttributeValueException {
-        Borrowing borrowingForUpdate = borrowingRepository.findById(id).get();
+        Borrowing borrowingForUpdate = findById(id).get();
         borrowingForUpdate.setStatus(BorrowingStatus.DECLINED_BY_USER);
 
         //save object
@@ -81,7 +83,7 @@ public class UserBorrowingsCatalog {
     }
 
 
-    //borrowing accepted (published event)
+    //BORROWING ACCEPTED (published event)
     public BorrowingId acceptedBorrowing(@NonNull BorrowingAcceptedViewModel borrowing) throws InvalidAttributeValueException {
         //check validator constraints
         Objects.requireNonNull(borrowing,"borrowing must not be null");
@@ -89,23 +91,34 @@ public class UserBorrowingsCatalog {
         if (constraintViolations.size() > 0) {
             throw new ConstraintViolationException("The BorrowingForm is not valid", constraintViolations);
         }
-        Borrowing domainModelBorrowing = toDomainModel(borrowing);
-
         //check if lent book is available
-        if(bookCatalog.findById(domainModelBorrowing.getLentBook()).equals(BookStatus.NOT_AVAILABLE)){
+        if(bookCatalog.findById(borrowing.getLentBook()).equals(BookStatus.NOT_AVAILABLE)){
             throw new InvalidAttributeValueException("The lent book is not available for lending at this moment.");
         }
 
         //update attributes of the pending borrowing
-        Borrowing borrowingForUpdate = borrowingRepository.findById(toDomainModel(borrowing).getId()).get();
-        borrowingForUpdate.setLenderNote(domainModelBorrowing.getLenderNote());
-        borrowingForUpdate.setLentBook(domainModelBorrowing.getLentBook());
+        Borrowing borrowingForUpdate = findById(borrowing.getId()).get();
+        borrowingForUpdate.setLenderNote(borrowing.getLenderNote());
+        borrowingForUpdate.setLentBook(borrowing.getLentBook());
         borrowingForUpdate.setStatus(BorrowingStatus.ACCEPTED);
 
         //update object and publish event
         var acceptedBorrowing = borrowingRepository.saveAndFlush(borrowingForUpdate);
         applicationEventPublisher.publishEvent(new BorrowingAccepted(acceptedBorrowing.id(), Instant.now(), acceptedBorrowing.getBorrowedBook(), acceptedBorrowing.getLentBook()));
         return acceptedBorrowing.id();
+    }
+
+    //BORROWING DONE (published event)
+    public BorrowingId doneBorrowing(@NonNull BorrowingDoneViewModel borrowing) throws InvalidAttributeValueException {
+        //update attributes of the completed borrowing
+        Borrowing borrowingForUpdate = findById(borrowing.getId()).get();
+        borrowingForUpdate.setStatus(BorrowingStatus.COMPLETED);
+        borrowingForUpdate.setDoneOnDate(borrowing.getDoneOnDate());
+
+        //update object and publish event
+        var completedBorrowing = borrowingRepository.saveAndFlush(borrowingForUpdate);
+        applicationEventPublisher.publishEvent(new BorrowingDone(completedBorrowing.id(), Instant.now(), completedBorrowing.getBorrowedBook(), completedBorrowing.getLentBook()));
+        return completedBorrowing.id();
     }
 
     //for accessing borrowing by id
@@ -122,11 +135,6 @@ public class UserBorrowingsCatalog {
         return borrowing;
     }
 
-    @NonNull
-    private Borrowing toDomainModel(@NonNull BorrowingAcceptedViewModel borrowingViewModel) {
-        var borrowing = new Borrowing(borrowingViewModel.getBorrower(), borrowingViewModel.getLender(),borrowingViewModel.getBorrowedBook(), borrowingViewModel.getLentBook(), borrowingViewModel.getLenderNote());
-        return borrowing;
-    }
     @NonNull
     private MeetingAddress toDomainModel(@NonNull MeetingAddressViewModel viewModel) {
         return new MeetingAddress(viewModel.getAddress(), viewModel.getCity(),viewModel.getTime());

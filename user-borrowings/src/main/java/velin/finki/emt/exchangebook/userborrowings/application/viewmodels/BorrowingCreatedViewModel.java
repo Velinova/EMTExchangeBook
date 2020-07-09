@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,10 +30,9 @@ public class BorrowingCreatedViewModel implements Serializable {
     @NotNull
     private Duration exchangeDuration;
 
-    private BorrowingStatus status = BorrowingStatus.PENDING;
-
     private String borrowerNote;
-    private Date madeOnDate;
+    private Date madeOnDate = Date.from(Instant.now());
+    private BorrowingStatus status = BorrowingStatus.PENDING;
 
     @Valid
     @NotNull
@@ -42,18 +42,15 @@ public class BorrowingCreatedViewModel implements Serializable {
     public Duration getExchangeDuration(){
         return exchangeDuration;
     }
-
     public UserId getBorrower(){
         return borrower;
     }
-
     public UserId getLender(){
         return lender;
     }
     public BookId getLentBook(){
         return lentBook;
     }
-
     public MeetingAddressViewModel getMeetingAddress() {
         return address;
     }

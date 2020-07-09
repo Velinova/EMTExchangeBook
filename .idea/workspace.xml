@@ -5,10 +5,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEventTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEventTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEventTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEventTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/port/BookCatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/port/BookCatalogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/BookCatalog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingCreatedViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingCreatedViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingCreatedViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingDone.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingDone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/port/BookCatalogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/port/BookCatalogClient.java" afterDir="false" />
     </list>
@@ -43,7 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Corona sequence alignment/DNA-Sequence-Alignment/pom.xml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -155,7 +161,9 @@
       <workItem from="1594131642637" duration="202000" />
       <workItem from="1594131867347" duration="1192000" />
       <workItem from="1594133116317" duration="9063000" />
-      <workItem from="1594153462103" duration="6270000" />
+      <workItem from="1594153462103" duration="6561000" />
+      <workItem from="1594216161630" duration="6270000" />
+      <workItem from="1594304318055" duration="670000" />
     </task>
     <servers />
   </component>
