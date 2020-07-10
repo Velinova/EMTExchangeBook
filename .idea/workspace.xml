@@ -5,18 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/application/BookCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEventTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingAcceptedEventTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEventTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/integration/BorrowingDoneEventTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/port/BookCatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/port/BookCatalogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/BookCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/BookCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/velin/finki/emt/exchangebook/library/domain/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@vaadin/vaadin-core-shrinkwrap/npm-shrinkwrap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/UserBorrowingsCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingCreatedViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/BorrowingCreatedViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingDone.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/event/BorrowingDone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/MeetingAddressViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/application/viewmodels/MeetingAddressViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/domain/model/Borrowing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/port/BookCatalogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-borrowings/src/main/java/velin/finki/emt/exchangebook/userborrowings/port/BookCatalogClient.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +53,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="velin.finki.emt.exchangebook.library.domain.model" />
       <recent name="velin.finki.emt.exchangebook.core.enums" />
       <recent name="velin.finki.emt.exchangebook.userborrowings.domain.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\velin\Desktop\exchangebook\library\src\main\java\velin\finki\emt\exchangebook\library\application\viewmodels" />
       <recent name="C:\Users\velin\Desktop\exchangebook\library\src\main\java\velin\finki\emt\exchangebook\library" />
       <recent name="C:\Users\velin\Desktop\exchangebook\core\src\main\java\velin\finki\emt\exchangebook\core\base" />
       <recent name="C:\Users\velin\Desktop\exchangebook\core\src\main\java\velin\finki\emt\exchangebook\core" />
@@ -83,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LibraryApplication">
+  <component name="RunManager" selected="Spring Boot.UserBorrowingsApplication">
     <configuration name="BooksApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="booksmenagement" />
       <extension name="coverage">
@@ -136,7 +134,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6cd28d95" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6cd28d95" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9c3921eb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -163,7 +171,8 @@
       <workItem from="1594133116317" duration="9063000" />
       <workItem from="1594153462103" duration="6561000" />
       <workItem from="1594216161630" duration="6270000" />
-      <workItem from="1594304318055" duration="670000" />
+      <workItem from="1594304318055" duration="7727000" />
+      <workItem from="1594389266554" duration="680000" />
     </task>
     <servers />
   </component>

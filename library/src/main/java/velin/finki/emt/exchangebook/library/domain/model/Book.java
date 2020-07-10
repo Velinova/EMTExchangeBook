@@ -2,6 +2,7 @@ package velin.finki.emt.exchangebook.library.domain.model;
 
 import lombok.Getter;
 import velin.finki.emt.exchangebook.core.base.AbstractEntity;
+import velin.finki.emt.exchangebook.core.base.DomainObjectId;
 import velin.finki.emt.exchangebook.core.enums.BookStatus;
 import velin.finki.emt.exchangebook.core.enums.Genre;
 import velin.finki.emt.exchangebook.core.valueobjects.FullName;
@@ -41,12 +42,15 @@ public class Book extends AbstractEntity<BookId> {
     @Column(name = "deleted", nullable = false)
     private boolean deleted = false;
 
+    @ManyToOne()
+    private UserId userId;
+
     public Book() {
 
     }
 
-    public Book(BookId bookId, String title,  Genre genre, FullName author, BookStatus status, String plot) {
-        super(bookId);
+    public Book(String title,  Genre genre, FullName author, BookStatus status, String plot) {
+        super(DomainObjectId.randomId(BookId.class));
         this.title = title;
         this.plot = plot;
         this.genre = genre;

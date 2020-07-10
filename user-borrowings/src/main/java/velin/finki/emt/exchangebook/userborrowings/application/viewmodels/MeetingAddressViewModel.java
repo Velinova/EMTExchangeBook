@@ -4,6 +4,7 @@ import lombok.Data;
 import velin.finki.emt.exchangebook.core.valueobjects.CityName;
 import velin.finki.emt.exchangebook.core.valueobjects.Time;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -14,8 +15,12 @@ public class MeetingAddressViewModel implements Serializable {
 
     @NotEmpty
     private String address;
+
+    @Valid
     @NotNull
     private CityName city;
+
+    @Valid
     @NotNull
     private Time meetingTime;
 

@@ -2,6 +2,7 @@ package velin.finki.emt.exchangebook.userborrowings.domain.model;
 
 import lombok.Getter;
 import velin.finki.emt.exchangebook.core.base.AbstractEntity;
+import velin.finki.emt.exchangebook.core.base.DomainObjectId;
 import velin.finki.emt.exchangebook.core.valueobjects.Address;
 import velin.finki.emt.exchangebook.core.valueobjects.FullName;
 import velin.finki.emt.exchangebook.core.valueobjects.MeetingAddress;
@@ -69,6 +70,7 @@ public class Borrowing extends AbstractEntity<BorrowingId> {
     }
 
     public Borrowing(Duration exchangeDuration, MeetingAddress meetingAddress, UserId borrower, UserId lender, Date madeOnDate, String borrowerNote, BookId lendedBook) {
+        super(DomainObjectId.randomId(BorrowingId.class));
         this.borrowerNote = borrowerNote;
         this.exchangeDuration = exchangeDuration;
         this.address = meetingAddress;

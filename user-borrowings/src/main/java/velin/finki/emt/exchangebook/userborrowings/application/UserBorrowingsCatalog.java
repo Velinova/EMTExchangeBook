@@ -6,23 +6,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import velin.finki.emt.exchangebook.core.enums.BookStatus;
 import velin.finki.emt.exchangebook.core.valueobjects.MeetingAddress;
-import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingAcceptedViewModel;
-import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingCreatedViewModel;
-import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.BorrowingDoneViewModel;
-import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.MeetingAddressViewModel;
+import velin.finki.emt.exchangebook.userborrowings.application.viewmodels.*;
 import velin.finki.emt.exchangebook.userborrowings.domain.enums.BorrowingStatus;
+import velin.finki.emt.exchangebook.userborrowings.domain.event.BookAdded;
+import velin.finki.emt.exchangebook.userborrowings.domain.event.BookDeleted;
 import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingAccepted;
 import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingDone;
-import velin.finki.emt.exchangebook.userborrowings.domain.model.Book;
+import velin.finki.emt.exchangebook.userborrowings.domain.model.BookId;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.Borrowing;
 import velin.finki.emt.exchangebook.userborrowings.domain.model.BorrowingId;
 import velin.finki.emt.exchangebook.userborrowings.domain.repository.BorrowingRepository;
 import velin.finki.emt.exchangebook.userborrowings.domain.repository.UserRepository;
-import velin.finki.emt.exchangebook.userborrowings.domain.event.BorrowingCreated;
 
 import javax.management.InvalidAttributeValueException;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
+import javax.validation.constraints.NotNull;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.Optional;
@@ -54,13 +53,34 @@ public class UserBorrowingsCatalog {
     }
 
 
+    //BOOK ADDED (published event)
+    public void addBook(@NotNull BookAddedViewModel book){
+        Objects.requireNonNull(book,"book must not be null");
+        var constraintViolations = validator.validate(book);
+        if (constraintViolations.size() > 0) {
+            throw new ConstraintViolationException("The BookViewModel is not valid", constraintViolations);
+        }
+        //publish event
+        applicationEventPublisher.publishEvent(new BookAdded(book.getTitle(), book.getPlot(), book.getAuthor(), book.getGenre(), book.getUserId(), Instant.now()));
+        return;
+    }
+
+    //BOOK DELETED (published event)
+    public void deleteBook(@NotNull BookId id){
+
+        //publish event
+        applicationEventPublisher.publishEvent(new BookDeleted(id,  Instant.now()));
+        return;
+    }
+
+
     //BORROWING CREATED (not published event)
     public BorrowingId createBorrowing(@NonNull BorrowingCreatedViewModel borrowing) throws InvalidAttributeValueException {
         //check validator constraints
         Objects.requireNonNull(borrowing,"borrowing must not be null");
         var constraintViolations = validator.validate(borrowing);
         if (constraintViolations.size() > 0) {
-            throw new ConstraintViolationException("The BorrowingForm is not valid", constraintViolations);
+            throw new ConstraintViolationException("The BorrowingViewModel is not valid", constraintViolations);
         }
         //check if borrowed book is available
         if(bookCatalog.findById(toDomainModel(borrowing).getBorrowedBook()).equals(BookStatus.NOT_AVAILABLE)){
@@ -89,7 +109,7 @@ public class UserBorrowingsCatalog {
         Objects.requireNonNull(borrowing,"borrowing must not be null");
         var constraintViolations = validator.validate(borrowing);
         if (constraintViolations.size() > 0) {
-            throw new ConstraintViolationException("The BorrowingForm is not valid", constraintViolations);
+            throw new ConstraintViolationException("The BorrowingViewModel is not valid", constraintViolations);
         }
         //check if lent book is available
         if(bookCatalog.findById(borrowing.getLentBook()).equals(BookStatus.NOT_AVAILABLE)){

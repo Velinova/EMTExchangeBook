@@ -5,10 +5,14 @@ import lombok.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
-import velin.finki.emt.exchangebook.library.domain.enums.BookStatus;
+import velin.finki.emt.exchangebook.core.enums.BookStatus;
+import velin.finki.emt.exchangebook.core.enums.Genre;
+import velin.finki.emt.exchangebook.core.valueobjects.FullName;
 import velin.finki.emt.exchangebook.library.domain.model.Book;
 import velin.finki.emt.exchangebook.library.domain.model.BookId;
 import velin.finki.emt.exchangebook.library.domain.repository.BookRepository;
+import velin.finki.emt.exchangebook.library.integration.BookAddedEvent;
+import velin.finki.emt.exchangebook.library.integration.BookDeletedEvent;
 import velin.finki.emt.exchangebook.library.integration.BorrowingAcceptedEvent;
 import velin.finki.emt.exchangebook.library.integration.BorrowingDoneEvent;
 
@@ -43,7 +47,20 @@ public class BookCatalog {
         return bookRepository.findByUserId(userId);
     }
 
-    //handling book accepted event, changing status to NOT_AVAILABLE
+    //handling book added event
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
+    public void onBookAddedEvent(BookAddedEvent event) {
+        Book book = new Book(event.getTitle(), new Genre(event.getGenre().getName()), new FullName(event.getAuthor().getName(), event.getAuthor().getSurname()), BookStatus.AVAILABLE, event.getPlot());
+        bookRepository.saveAndFlush(book);
+    }
+    //handling book added event
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
+    public void onBookAddedEvent(BookDeletedEvent event) {
+        Book book = bookRepository.findById(event.getId()).get();
+        bookRepository.delete(book);
+    }
+
+    //handling borrowing accepted event, changing status to NOT_AVAILABLE
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void onBorrowingAcceptedEvent(BorrowingAcceptedEvent event) {
         Book borrowedBook = bookRepository.findById(event.getBorrowedBookId()).orElseThrow(RuntimeException::new);
@@ -54,7 +71,7 @@ public class BookCatalog {
         bookRepository.save(lentBook);
     }
 
-    //handling book done event, changing status to AVAILABLE
+    //handling borrowing done event, changing status to AVAILABLE
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void onBorrowingDoneEvent(BorrowingDoneEvent event) {
         Book borrowedBook = bookRepository.findById(event.getBorrowedBookId()).orElseThrow(RuntimeException::new);

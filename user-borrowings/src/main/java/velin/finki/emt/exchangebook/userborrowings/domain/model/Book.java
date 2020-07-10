@@ -6,7 +6,8 @@ import velin.finki.emt.exchangebook.core.enums.Genre;
 
 @Getter
 public class Book {
-    private BookId idd;
+    private BookId id;
+    private UserId userId;
     private String title;
     private String plot;
     private BookStatus status;
